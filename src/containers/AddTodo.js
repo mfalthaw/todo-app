@@ -4,6 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { connect } from 'react-redux';
 
+import { addTodo } from '../actions';
+
 class AddTodo extends Component {
 
   state = {
@@ -12,10 +14,7 @@ class AddTodo extends Component {
 
   addTodo = (text) => {
     // update redux store
-    this.props.dispatch({
-      type: 'ADD_TODO',
-      text: text,
-    });
+    this.props.dispatch(addTodo(text));
 
     // reset state
     this.setState({ text: '' });
